@@ -1,0 +1,23 @@
+.favorite-title {
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.favorite-empty {
+  text-align: center;
+  padding: 40px;
+  border-radius: 10px;
+}
+
+.favorite-card {
+  transition: transform 0.3s ease;
+}
+
+.favorite-card:hover {
+  transform: translateY(-8px);
+}
+
+.favorite-grid {
+  margin-top: 20px;
+}

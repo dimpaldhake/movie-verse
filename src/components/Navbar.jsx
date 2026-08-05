@@ -1,11 +1,17 @@
 import { NavLink } from "react-router-dom";
+import { useContext } from "react";
+import ThemeToggle from "./ThemeToggle";
+import { FavoriteContext } from "../context/FavoriteContext";
+import "../styles/Navbar.css";
 
 function Navbar() {
+  const { favorites } = useContext(FavoriteContext);
+
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark shadow">
       <div className="container">
 
-        <NavLink className="navbar-brand fw-bold" to="/">
+        <NavLink className="navbar-brand fw-bold fs-3" to="/">
           🎬 MovieVerse
         </NavLink>
 
@@ -13,30 +19,48 @@ function Navbar() {
           className="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
-          data-bs-target="#navbar"
+          data-bs-target="#navbarNav"
         >
           <span className="navbar-toggler-icon"></span>
         </button>
 
-        <div className="collapse navbar-collapse" id="navbar">
-
-          <ul className="navbar-nav ms-auto">
+        <div
+          className="collapse navbar-collapse"
+          id="navbarNav"
+        >
+          <ul className="navbar-nav ms-auto align-items-center">
 
             <li className="nav-item">
-              <NavLink className="nav-link" to="/">
-                Home
+              <NavLink
+                to="/"
+                className={({ isActive }) =>
+                  isActive
+                    ? "nav-link active fw-bold"
+                    : "nav-link"
+                }
+              >
+                🏠 Home
               </NavLink>
             </li>
 
             <li className="nav-item">
-              <NavLink className="nav-link" to="/favorites">
-                <i className="bi bi-heart-fill me-1"></i>
-                Favorites
+              <NavLink
+                to="/favorites"
+                className={({ isActive }) =>
+                  isActive
+                    ? "nav-link active fw-bold"
+                    : "nav-link"
+                }
+              >
+                ❤️ Favorites ({favorites.length})
               </NavLink>
+            </li>
+
+            <li className="nav-item ms-3">
+              <ThemeToggle />
             </li>
 
           </ul>
-
         </div>
 
       </div>

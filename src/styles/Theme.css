@@ -1,0 +1,69 @@
+body {
+  background-color: white;
+  color: black;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark {
+  background-color: #121212;
+  color: white;
+}
+
+body.dark .container {
+  color: white;
+}
+
+body.dark .card {
+  background-color: #1e1e1e;
+  color: white;
+}
+
+body.dark .card-text {
+  color: white;
+}
+
+body.dark h1,
+body.dark h2,
+body.dark h3,
+body.dark h4,
+body.dark h5 {
+  color: white;
+}
+
+body.dark .form-control {
+  background-color: #333;
+  color: white;
+  border-color: #555;
+}
+
+body.dark .form-control::placeholder {
+  color: #bbb;
+}
+
+body.dark .navbar {
+  background-color: #000 !important;
+}
+
+body.dark .btn-outline-secondary {
+  color: white;
+  border-color: white;
+}
+
+body.dark .btn-outline-secondary:hover {
+  background: white;
+  color: black;
+}
+
+body.dark .alert {
+  background-color: #2a2a2a;
+  color: white;
+  border: 1px solid #444;
+}
+
+body.dark .badge {
+  color: white;
+}
+
+body.dark a {
+  color: white;
+}
